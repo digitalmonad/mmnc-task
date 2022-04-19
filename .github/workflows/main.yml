@@ -2,9 +2,7 @@ name: Lint, build & test
 
 on:
   workflow_dispatch:
-    branches: [master, develop]
-  push:
-    branches: [develop]
+    branches: [*]
   pull_request:
     branches: [master]
 
@@ -23,6 +21,9 @@ jobs:
 
       - name: Install packages
         run: yarn install
+
+      - name: Lint
+        run: yarn lint
 
       - name: Build
         run: yarn build
