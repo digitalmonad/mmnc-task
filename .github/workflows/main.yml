@@ -1,0 +1,35 @@
+name: Lint, build & test
+
+on:
+  workflow_dispatch:
+    branches: [master, develop]
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Lint, test & build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Github Action'
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install packages
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: mmnc-task
+          heroku_email: webovydesigner@gmail.com
