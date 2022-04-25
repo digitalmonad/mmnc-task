@@ -1,8 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Momence task
 
-## Getting Started
+This project is the solution for interview task for Momence company.
 
-First, run the development server:
+The business requirements of the app were:
+
+- [ ] Client part is single page app written in ReactJS framework
+- [ ] After start, the app fetches exchange rates from https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/denni_kurz.txt
+- [ ] Fetched data are processed and displayed to user
+- [ ] Attach simple form, where user can input amount of money in CZK and after pressing a button displays the amount of selected currency
+- [ ] Commit often and use GitHub as the remote repository
+- [ ] Tech. stack should include React (+ Hooks), TypeScript, Styled Components, React Query
+
+#
+
+App is automatically deployed on Heroku after each commit to master and can be previewed on this URL: https://mmnc-task.herokuapp.com/
+
+#
+
+## Scripts
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +27,44 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build NextJS static files:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+# or
+yarn build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- the app is build in /.next folder
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Run NextJS server:
 
-## Learn More
+```bash
+npm run start
+# or
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+- build script must be run beforehand
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run tests:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run test
+# or
+yarn test
+```
 
-## Deploy on Vercel
+Run Storybook to view and develop components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run storybook
+# or
+yarn storybook
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Storybook configuration files can be found in /.storybook folder
+
+#
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
