@@ -3,7 +3,7 @@ import { ThemeProvider } from 'theme-ui'
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useState } from 'react'
-import { lightTheme } from '../styles/theme'
+import { theme } from '../styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [client] = useState(new QueryClient())
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider {...{ client }}>
       <Hydrate state={pageProps.dehydratedState}>
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider {...{ theme }}>
           <Component {...pageProps} />
         </ThemeProvider>
       </Hydrate>
