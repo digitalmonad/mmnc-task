@@ -1,11 +1,6 @@
-import { Theme as ThemeUiT } from 'theme-ui'
+import { Theme as ThemeT } from 'theme-ui'
 
-type ThemeT = ThemeUiT & {
-  name?: string
-  variants?: any
-}
-
-const lightPalette = {
+const palette = {
   gray: {
     100: '#f9f9f9',
     500: '#f0f0f0',
@@ -19,7 +14,11 @@ const lightPalette = {
   },
 }
 
-const lightColors: ThemeUiT['colors'] = {
+type CustomThemeColorsT = ThemeT['colors'] & {
+  palette: typeof palette
+}
+
+const colors: CustomThemeColorsT = {
   black: '#000',
   white: '#fff',
   text: 'hsla(230, 20%, 0%, 60%)',
@@ -28,7 +27,7 @@ const lightColors: ThemeUiT['colors'] = {
   secondary: 'hsl(290, 100%, 80%)',
   highlight: 'hsl(260, 20%, 40%)',
   muted: 'hsla(230, 20%, 0%, 20%)',
-  palette: lightPalette,
+  palette,
   modes: {
     light: {
       primary: 'black',
@@ -36,27 +35,34 @@ const lightColors: ThemeUiT['colors'] = {
   },
 }
 
-const baseTheme: ThemeT = {
-  fonts: {
-    body: 'inherit',
-    heading: 'inherit',
-    monospace: 'Menlo, monospace',
-  },
-  colors: lightColors,
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  sizes: { avatar: 48, button: 33 },
-  radii: { default: 4, circle: 99999 },
-  shadows: { card: '0 0 4px rgba(0, 0, 0, .125)' },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    display: 800,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.25,
-  },
+const fonts: ThemeT['fonts'] = {
+  body: 'inherit',
+  heading: 'inherit',
+  monospace: 'Menlo, monospace',
+}
+
+const space: ThemeT['space'] = [0, 4, 8, 16, 32, 64, 128, 256, 512]
+
+const fontSizes: ThemeT['fontSizes'] = [12, 14, 16, 20, 24, 32, 48, 64, 72]
+
+const fontWeights: ThemeT['fontWeights'] = {
+  body: 400,
+  heading: 700,
+  display: 800,
+}
+
+const lineHeights: ThemeT['lineHeights'] = {
+  body: 1.5,
+  heading: 1.25,
+}
+
+export const theme = {
+  fonts,
+  colors,
+  space,
+  fontSizes,
+  fontWeights,
+  lineHeights,
   text: {
     body: {
       variant: 'text.heading',
@@ -65,7 +71,7 @@ const baseTheme: ThemeT = {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
-      color: `${lightColors.primary}`,
+      color: `${colors.primary}`,
     },
     display: {
       variant: 'text.heading',
@@ -74,27 +80,26 @@ const baseTheme: ThemeT = {
       letterSpacing: '-0.03em',
       mb: 3,
     },
-    caps: { textTransform: 'uppercase', letterSpacing: '0.1em' },
   },
   forms: {
     input: {
-      border: `2px solid ${lightColors.muted}`,
+      border: `2px solid ${colors.muted}`,
       transition: 'all ease 0.2s',
       ':focus': {
-        border: `2px solid ${lightColors.primary}`,
+        border: `2px solid ${colors.primary}`,
         outline: 'none',
       },
     },
     select: {
-      border: `2px solid ${lightColors.muted}`,
+      border: `2px solid ${colors.muted}`,
       transition: 'all ease 0.2s',
       ':focus': {
-        border: `2px solid ${lightColors.primary}`,
+        border: `2px solid ${colors.primary}`,
         outline: 'none',
       },
     },
     option: {
-      color: `${lightColors.muted}`,
+      color: `${colors.muted}`,
       backgroundColor: 'red',
     },
   },
@@ -117,23 +122,6 @@ const baseTheme: ThemeT = {
       variant: 'buttons.primary',
       color: 'background',
       bg: 'secondary',
-    },
-  },
-  variants: {
-    avatar: { width: 'avatar', height: 'avatar', borderRadius: 'circle' },
-    header: {
-      borderBottom: `1px solid rgba(0, 0, 0, .1)`,
-    },
-    card: { p: 2, bg: 'background', boxShadow: 'card' },
-    link: { color: 'primary' },
-    nav: {
-      fontSize: 1,
-      fontWeight: 'bold',
-      display: 'inline-block',
-      p: 2,
-      color: 'inherit',
-      textDecoration: 'none',
-      ':hover,:focus,.active': { color: 'primary' },
     },
   },
   styles: {
@@ -205,10 +193,4 @@ const baseTheme: ThemeT = {
       maxWidth: '100%',
     },
   },
-}
-
-export const lightTheme = {
-  ...baseTheme,
-  name: 'Light Theme',
-  colors: lightColors,
 }

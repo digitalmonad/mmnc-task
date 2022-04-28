@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'theme-ui'
 import { withThemes } from '@react-theming/storybook-addon'
 import { addDecorator } from '@storybook/react'
-import { lightTheme } from '../styles/theme'
+import { theme } from '../styles/theme'
 import { GlobalStyles, AppWrapper } from '../styles/globals'
 
 export const parameters = {
@@ -33,18 +33,17 @@ export const onThemeSwitch = (context) => {
   }
 }
 
-const themingDecorator = withThemes(ThemeProvider, [lightTheme], {
+const themingDecorator = withThemes(ThemeProvider, [theme], {
   onThemeSwitch,
 })
 const globalStylesDecorator = (Story) => (
   <>
     <GlobalStyles />
-
-    {/* <ThemeProvider theme={lightTheme}> */}
-    <AppWrapper>
-      <Story />
-    </AppWrapper>
-    {/* </ThemeProvider> */}
+    <ThemeProvider theme={theme}>
+      <AppWrapper>
+        <Story />
+      </AppWrapper>
+    </ThemeProvider>
   </>
 )
 
