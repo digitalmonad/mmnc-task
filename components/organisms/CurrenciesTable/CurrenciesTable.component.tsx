@@ -4,6 +4,7 @@ import { useTable, TableInstance, useSortBy } from 'react-table'
 import styled from '@emotion/styled'
 
 import { TableHeadRow } from '../../molecules/table/TableHeadRow'
+
 import {
   TableBodyRow,
   TableBodyRowSkeleton,
