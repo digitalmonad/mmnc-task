@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format": "prettier --config .prettierrc './**/*.ts' --write",
     "test": "yarn jest --watch",
+    "test:ci": "yarn jest --ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
