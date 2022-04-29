@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useState } from 'react'
 import { theme } from '../styles/theme'
+import { GlobalStyles } from '../styles/globals'
+import { Header } from '../components/_layout/Header'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [client] = useState(new QueryClient())
@@ -12,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider {...{ client }}>
       <Hydrate state={pageProps.dehydratedState}>
         <ThemeProvider {...{ theme }}>
+          <GlobalStyles />
+          <Header />
           <Component {...pageProps} />
         </ThemeProvider>
       </Hydrate>
