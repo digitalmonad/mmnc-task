@@ -6,6 +6,14 @@ export type CurrencyT = {
   country: string
 }
 
+export type CurrencyOriginalT = {
+  kurz: string
+  kód: string
+  množství: string
+  měna: string
+  země: string
+}
+
 export type CurrencyMetaInfoT = {
   date: string
   number: string
