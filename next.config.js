@@ -1,4 +1,4 @@
-const { i18n } = await require('./next-i18next.config')
+import { i18n } from './next-i18next.config'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
