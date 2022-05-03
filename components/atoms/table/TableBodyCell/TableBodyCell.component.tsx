@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 
 export const TableBodyCell = styled('td')`
   text-align: left;
-  vertical-align: top;
-  padding: ${({ theme }) => theme.space[3]}px ${({ theme }) => theme.space[2]}px;
+  vertical-align: center;
+  height: ${({ theme }) => theme.space.triple};
+  padding-left: ${({ theme }) => theme.space.base};
 `

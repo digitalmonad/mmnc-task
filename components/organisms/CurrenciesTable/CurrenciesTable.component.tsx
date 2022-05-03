@@ -32,13 +32,13 @@ export const Table = styled.table`
 
 export const ScrollableWrapper = styled.div`
   overflow: scroll;
-  max-height: 500px;
+  max-height: 20rem;
 `
 
 export const Wrapper = styled.div`
   box-shadow: 0px 2px 5px #dbdbdb;
   border-radius: 10px;
-  padding: 10px;
+  padding: ${({ theme }) => theme.space.half};
 `
 
 type TableLayoutPropsT<T extends object> = {

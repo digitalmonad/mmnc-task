@@ -2,7 +2,7 @@ import '@emotion/react'
 import { theme } from '../styles/theme'
 
 type CustomTheme = typeof theme
-theme.colors
+
 /* eslint-disable @typescript-eslint/no-empty-interface */
 declare module '@emotion/react' {
   export interface Theme extends CustomTheme {}

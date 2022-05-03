@@ -1,18 +1,14 @@
 import { Theme as ThemeT } from 'theme-ui'
 
-const palette = {
-  gray: {
-    100: '#f9f9f9',
-    500: '#f0f0f0',
-  },
-  teal: {
-    100: '#f0fffc',
-    500: '#38b2ac',
-  },
-  purple: {
-    100: '#f3f0ff',
-  },
-}
+import {
+  palette,
+  fonts,
+  space,
+  fontSizes,
+  aliasColors,
+  lightModeColors,
+  radii,
+} from './tokens'
 
 type CustomThemeColorsT = ThemeT['colors'] & {
   palette: typeof palette
@@ -21,33 +17,16 @@ type CustomThemeColorsT = ThemeT['colors'] & {
 const colors: CustomThemeColorsT = {
   black: '#000',
   white: '#fff',
-  text: 'hsla(230, 20%, 0%, 60%)',
-  background: '#fff',
-  primary: '#609',
-  secondary: 'hsl(290, 100%, 80%)',
-  highlight: 'hsl(260, 20%, 40%)',
-  muted: 'hsla(230, 20%, 0%, 20%)',
   palette,
+  ...aliasColors,
   modes: {
-    light: {
-      primary: 'black',
-    },
+    light: lightModeColors,
   },
 }
 
-const fonts: ThemeT['fonts'] = {
-  body: 'inherit',
-  heading: 'inherit',
-  monospace: 'Menlo, monospace',
-}
-
-const space: ThemeT['space'] = [0, 4, 8, 16, 32, 64, 128, 256, 512]
-
-const fontSizes: ThemeT['fontSizes'] = [12, 14, 16, 20, 24, 32, 48, 64, 72]
-
 const fontWeights: ThemeT['fontWeights'] = {
   body: 400,
-  heading: 700,
+  heading: 900,
   display: 800,
 }
 
@@ -63,6 +42,7 @@ export const theme = {
   fontSizes,
   fontWeights,
   lineHeights,
+  radii,
   text: {
     body: {
       variant: 'text.heading',
