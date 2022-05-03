@@ -9,7 +9,7 @@ export const GlobalStyles = () => (
       body {
         padding: 0;
         margin: 0;
-        font-family: 'Epilogue', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+        font-family: 'Poppins', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
           'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
