@@ -1,4 +1,4 @@
-import { fetchRawCurrenciesData } from './cnbApi.utils'
+import { fetchRawCurrenciesData } from '../../api/cnbApi.utils'
 import {
   extractCurrencies,
   extractMetaInfo,
@@ -7,7 +7,7 @@ import {
 
 import { CurrenciesApiResponseT } from '../../types'
 
-export const fetchCurrencies = async () => {
+export const fetchAndParseCurrencies = async () => {
   const response = await fetchRawCurrenciesData()
   const metaInfo = await extractMetaInfo(response)
   const currencies = await extractCurrencies(response)
