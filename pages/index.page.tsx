@@ -9,6 +9,7 @@ import { CurrenciesTable } from '../components/organisms/CurrenciesTable'
 
 const Home: NextPage = ({}) => {
   const data = useCurrenciesData()
+
   return (
     <div>
       {data.data.data && (
