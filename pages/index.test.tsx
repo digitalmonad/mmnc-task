@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react'
 import { render } from '../test-utils'
-import Home from './index.page'
+import Dashboard from './index.page'
 
 test('renders response from query', async () => {
-  render(<Home />)
+  render(<Dashboard />)
 
   await screen.findByText('Rate')
 })

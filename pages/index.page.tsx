@@ -7,7 +7,7 @@ import { queryKeys } from '../react-query/queryKeys'
 import { useCurrenciesData } from '../hooks/currencies/useCurrenciesData'
 import { CurrenciesTable } from '../components/organisms/CurrenciesTable'
 
-const Home: NextPage = ({}) => {
+const Dashboard: NextPage = ({}) => {
   const data = useCurrenciesData()
 
   return (
@@ -31,4 +31,4 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-export default Home
+export default Dashboard
