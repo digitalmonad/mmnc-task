@@ -5,7 +5,7 @@ const { i18n } = require('./next-i18next.config')
 const nextConfig = {
   reactStrictMode: true,
   experimental: { esmExternals: true },
-  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  pageExtensions: ['page.*', 'api.*'],
   async rewrites() {
     return [
       {
